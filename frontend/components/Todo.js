@@ -1,7 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 export default class Todo extends React.Component {
   render() {
-    return null
+    const { todo, toggleCompleted } = this.props;
+    return (
+      <div onClick={toggleCompleted} style={{ cursor: 'pointer' }}>
+        {todo.name} {todo.completed ? '✔️' : ''}
+      </div>
+    );
   }
 }
+
